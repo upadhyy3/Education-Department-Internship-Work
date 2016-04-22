@@ -1,0 +1,67 @@
+﻿
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>Cognitive</h2>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Modified</th>
+                            <th>Modified By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa fa-file-text"></i></td>
+                            <td>Moe</td>
+                            <td><p id="demo"></p></td>
+                            <td>random</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-file-pdf-o"></i></td>
+                            <td>Moe</td>
+                            <td><p id="demo"></p></td>
+                            <td>random</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-file-powerpoint-o"></i></td>
+                            <td>Moe</td>
+                            <td><p id="demo"></p></td>
+                            <td>random</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-file-excel-o"></i></td>
+                            <td>Moe</td>
+                            <td><p id="demo"></p></td>
+                            <td>random</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-file-text"></i></td>
+                            <td>Moe</td>
+                            <td><p id="demo"></p></td>
+                            <td>random</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- end container -->
+    </div>
+    <!-- javascript -->
+    <script>
+            $("textarea").tooltip();
+            $(".form-group.collapse").collapse();
+    </script>
+    <script>
+            function myFunction() {
+                var x = new Date(document.lastModified);
+                document.getElementById("demo").innerHTML = x;
+            }
+    </script>
+
+</body>
+</html>

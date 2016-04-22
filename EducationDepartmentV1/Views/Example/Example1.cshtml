@@ -1,0 +1,302 @@
+﻿@model EducationDepartmentV1.Models.Example
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Example 1</div>
+                    <a id="change1" data-toggle="tooltip" onclick="replaceContentInContainer('E1',currentRightPanelElement)">
+                        <h4>Topic: Searching and applying for a job position</h4>
+                    </a>
+                    <p>
+                        Target learners: <br>
+                        The learners are undergraduate students who study in design fields at the College of Fine and Applied Arts, and prepare for internships and full time positions.
+                    </p>
+
+                    <p><b>Step 1: State learning goals </b></p>
+
+                    <p>
+                        To successfully secure a position, learners will be able to <br>
+                        <ul>
+                            <li> conduct research on a target organization </li>
+
+                            <li> build a resume including appropriate experiences and transferable skills </li>
+
+                            <li> develop a cover letter with appropriate experiences and transferable skills </li>
+
+                            <li> develop competitive and relevant answers to potential interview questions </li>
+                        </ul>
+                    </p>
+
+                    <p> <b>Step 2: Identify learning outcomes</b></p>
+
+                    <p>Learning outcomes include declarative knowledge, and intellectual skills of procedural learning as well as problem solving skills. </p>
+
+                    <p> <b>Step 3: Analyze information processing steps </b></p>
+
+                    <p>Goal1: Upon completion of the lesson, learners will be able to conduct research on a target organization </p>
+
+                    <p>Information processing steps: </p>
+
+                    <p>
+                        <ol>
+                            <li>Identify what kinds of skills and experiences that an employer expects from a candidate by critically reviewing a job ad.</li>
+                            <li>Identify critical organizational characteristics.</li>
+                            <li> Identify potential interview questions using online sources.</li>
+                        </ol>
+                    </p>
+
+                    <p>
+                        Goal2: Upon completion of the lesson, learners will be able to build the resume with appropriate experiences and transferable skills
+                    </p>
+
+                    <p>Information processing steps: </p>
+
+                    <p>
+                        <ol>
+                            <li>Identify relevant skills from their identified professional experiences or activities to match employer&rsquo;s needs as listed in the job advertisement.</li>
+                            <li>Explain their experience to employers </li>
+                            <li>Write their developed contents under the right section (e.g., education, employment experiences, and activities)</li>
+                        </ol>
+                        Goal 3: Upon completion of the lesson, learners will be able to develop cover letter with appropriate experiences and transferable skills. <br>
+                        Information processing steps:
+                    </p>
+
+                    <p>
+                        <ol>
+                            <li>Explain cover letter format and techniques </li>
+                            <li> Explain how learner is a good fit for the company </li>
+                            <li> Put developed contents within the appropriate cover letter format </li>
+                        </ol>
+                    </p>
+
+                    <p>Goal 4: Upon completion of the lesson, learners will be able to develop competitive and relevant answers to potential interview questions</p>
+
+                    <p>Information processing steps: </p>
+
+                    <p>
+                        <ol>
+                            <li>Select and develop answers to interview questions given the employer&rsquo;s needs </li> 
+                            <li> Apply their experiences and transferrable skills by integrating employer&rsquo;s needs of target organization and position in order to present learners&rsquo; qualifications </li>
+                            <li> Provide clear, concise answers to common questions during the mock interview </li>
+                        </ol>
+                    </p>
+                    
+                    <p> <b>Step 4: Draw an information processing map </b></p>
+                  <div class="item" align="center">
+                      <img src="~/images/Example1Step7FC1.JPG" width="500" height="400" />
+                  </div> 
+                    <a id="change2" onclick="replaceContentInContainer('E2',currentRightPanelElement)">
+                        <h4>Topic: Classroom Hygiene and Sanitation Target learners: </h4>
+                    </a>
+                    <p> <b>Step 5: Draw an information processing map </b></p>
+                    <p>For learning goal 1: Conducting research on a target organization</p>
+     
+                    <p>Information Processing Step 1. Identify the skills and experience an employer expects</p>
+                  
+                    <p>Prerequisite 1: Select a job advertisement that matches the learner&rsquo;s area of expertise.</p>
+                    <p>Prerequisite 2: Identify required tasks and skills from the ad to which they can respond.</p>
+                    
+                    <p>Information Processing Step 2.Identify critical organizational characteristics.</p>
+                    <p>Prerequisite 1: Identify target organization&rsquo;s business field, products, major concentration, organizational vision, mission, and goals</p>
+                    <p>Prerequisite 2: Identify what commonalities they share with the organization</p>
+                    
+                    <p>Information Processing Step 3.Identify potential interview questions using online sources.</p>
+                    
+                    <p>Prerequisite 1: Identify questions asked in previous interviews for the same positionsfrom the target organization by searching relevant online resources</p>
+                    <p>Prerequisite 2: Answer common interview questions by reviewing Common InterviewQ+A page (and suggested answers).</p>
+                    <p>Prerequisite 3: Create a list of questions to use for learner&rsquo;s own interview preparation.</p>
+                    
+                    <p><strong>Step 6: Draw a prerequisite analysis map</strong></p>
+                    <p>For learning goal 1:&nbsp;</p>
+                    
+                    <div class="item" align="center">
+                        <img src="~/images/Example1Step7FC2.JPG" width="650" height="400" />
+                    </div> 
+
+                    
+                    <p><strong>Step 7 Writing learning objectives</strong></p>
+                    <p><strong>Using the information from steps 1 to 6, </strong></p>
+                    <p><strong>1. write a terminal objective for &ldquo;conducting research&rdquo; learning goal. </strong></p>
+                    <p><strong>2. writeall the enabling objectives for this terminal objective.&nbsp;</strong></p>
+                     
+                    @*@using (Html.BeginForm())
+                    {         
+                        <div class="form-group">
+                            @Html.TextAreaFor(x => x.id);
+                            @Html.TextAreaFor(x => x.contetn);
+                        </div>  
+                        
+                        <button class="btn btn-default" type="submit">Create </button>
+                    }*@ 
+                    
+                    <form action="/Example/Example1" method="post">
+                        <div class="form-group">
+                         @*   <textarea cols="20" id="id" name="id" rows="2"></textarea>;*@
+                            <textarea cols="20" id="contetn" style="display: none" name="contetn" rows="2" data-sample="1"></textarea>;
+                        </div>
+                        <button class="btn btn-default" type="submit">Create </button>
+                    </form>   
+
+                @*    <div id="editor1" data-sample="1"></div>*@
+                    <div id="content1" style="display: none" data-sample="1">
+                        <h5>Your Solution</h5>
+                        <div id="editorcontent1"></div>
+                    </div>
+
+                    <p data-sample="1">
+                        <input onclick="createEditor();" type="button" value="Edit" id="create">
+                        <input onclick="removeEditor();" type="button" value="Save" id="remove" style="display:none">
+                    </p>
+
+                    <div id="trackingDiv"></div>
+                    <a href="javascript:genPDF()"> Download PDF</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Notes About Current Step
+                    </div>
+                    <div id="default" class="panel-body">
+                        <h3>Nothing to display</h3>
+                    </div>
+                    <!-- <div id="replacements" style="display:none"> -->
+                    <div id="E1" style="display:none">
+                        <ol>
+                            <li>Recall and collect necessary supplies and equipment (soap, dish cloth, dish drain rack, bleach, two compartment sink)</li>
+                            <li>Place dish drain rack on the edge of the right sink</li>
+                            <li>Plug left sink, fill with hot water.</li>
+                            <li>Measure (1 tbsp. bleach/1 gallon water) and pour bleach into water</li>
+                            <li>Measure (1 tsp. soap/1 gallon water) and pour into water</li>
+                            <li>Place properly selected dish (correct order: glassware, dinnerware, silverware, pots then pans) in sink and scrub with dish cloth until clean (no residue).</li>
+                            <li>Rinse dish in right sink under hot running water then place dish in drain rack to air dry </li>
+                        </ol>
+                    </div>
+                    <div id="E2" style="display:none">
+                        <h3>New Content From Link 2</h3>
+                    </div>
+                    <!-- </div> -->
+                </div><!-- end panel -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var currentRightPanelElement = "default";
+        function replaceContentInContainer(target, source) {
+            document.getElementById(source).innerHTML = document.getElementById(target).innerHTML;
+            source.style.display = "none";
+            target.style.display = "block";
+            window.currentRightPanelElement = target;
+            alert(window.currentRightPanelElement);
+        }
+    </script>
+    <script>
+        function genPDF() {
+            var doc = new jsPDF('p', 'pt', 'letter');
+            var specialElementHandlers = {
+                '#editor': function (element, renderer) {
+                    return true;
+                }
+            };
+
+            // All units are in the set measurement for the document
+            // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+            doc.fromHTML($('#panelGuest').get(0), 50, 60, {
+                'width': 545,
+                'elementHandlers': specialElementHandlers
+            });
+            doc.save('test.pdf');
+        }
+    </script>
+    <script>
+        $("textarea").tooltip();
+        $(".form-group.collapse").collapse();
+    </script>
+    <script>
+        CKEDITOR.replace('example');
+    </script>
+
+    <script>
+        function sub() {
+            var editorText = CKEDITOR.instances.example.getData();
+            alert(editorText);
+            CKEDITOR.instances.example.destroy();
+            // $('#trackingDiv').html(editorText);
+            // CKEDITOR.replace('trackingDiv');
+            // Update button states.
+            document.getElementById('Edit').style.display = '';
+            document.getElementById('Save').style.display = 'none';
+
+        }
+
+        function edit() {
+            CKEDITOR.replace('example');
+            // $('#trackingDiv').html(editorText);
+            // CKEDITOR.replace('trackingDiv');
+            // Update button states.
+            document.getElementById('Edit').style.display = 'none';
+            document.getElementById('Save').style.display = '';
+
+        }
+    </script>
+
+    <script data-sample="1">
+        //var editor1, html = '';
+        var contetn, html = '';
+
+        function createEditor() {
+            //if (editor1)
+            //    return;
+                
+            if (contetn)
+                return;
+            // Create a new editor instance inside the <div id="editor"> element,
+            // setting its value to html.
+            var config = {};
+           // contetn = CKEDITOR.appendTo('contetn', config, html);
+            contetn = CKEDITOR.replace('contetn');
+            
+            // Update button states.
+            document.getElementById('remove').style.display = '';
+            document.getElementById('create').style.display = 'none';
+        }
+
+        function removeEditor() {
+            //if (!editor1)
+            //    return;
+
+            if (!contetn){
+                alert('There is no data available.');
+                return;
+            }
+            // Retrieve the editor content. In an Ajax application this data would be
+            // sent to the server or used in any other way.
+
+        //     html = CKEDITOR.instances.contetn.getdata();
+             //alert(editortext);
+
+            //if (CKEDITOR.instances.editor1.getData() == '')
+            //    alert('There is no data available.');
+
+            html = contetn.getData();
+            alert(html);
+            // Update <div> with "Edited Content".
+            document.getElementById('editorcontent1').innerHTML = html;
+            // Show <div> with "Edited Content".
+            document.getElementById('content1').style.display = '';
+            // Update button states.
+            document.getElementById('remove').style.display = 'none';
+            document.getElementById('create').style.display = '';
+
+            // Destroy the editor.
+            editor1.destroy();
+            editor1 = null;
+        }
+    </script>
+</body>
+</html>

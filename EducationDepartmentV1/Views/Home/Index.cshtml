@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="locations" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#locations" data-slide-to="0" class="active"></li>
+                        <li data-target="#locations" data-slide-to="1"></li>
+                        <li data-target="#locations" data-slide-to="2"></li>
+                        <li data-target="#locations" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="~/images/image1.jpg" alt="" width="1200" height="300">
+                        </div>
+                        <div class="item">
+                            <img src="~/images/image2.jpg" alt="" width="1200" height="300">
+                        </div>
+                        <div class="item">
+                            <img src="~/images/image3.jpg" alt="" width="1200" height="300">
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#locations" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#locations" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+                <h2>What our students are saying...</h2>
+                <blockquote>
+                    <p>Some static content. Mission Statement Mission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission Statement</p>
+                    <small>Anonymous Student, Education Department</small>
+                </blockquote>
+                <blockquote>
+                    <p>Some static content. Mission Statement Mission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission StatementMission Statement</p>
+                    <small>Anonymous Student, Education Department</small>
+                </blockquote>
+            </div>
+            <!-- </div> -->
+
+            <footer class="row siteinfo">
+                <p>Education Department offer you variety of courses. This site is awesome.</p>
+            </footer>
+        </div><!-- end container -->
+</div>
+        <!-- modal window -->
+        <!-- javascript -->
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script>
+    	$('.carousel').carousel({
+    		interval: 2000,
+    		wrap: false
+    	});
+        </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Example 3</div>
+                    <p><strong>Topic: Financial Literacy</strong></p>
+                    <p><strong>Target learners:</strong></p>
+                    <p>Target learners are high school and college students who need to learn about financial literacy.</p>
+                    <p><strong>Step 1: State learning goals</strong></p>
+                    <p class="normal">After completing this course, given information about how to use and manage a checking account, learners will be able to</p>
+                    <ul>
+                        <li>Use checks/debit cards for expenses, as well as balance and</li>
+                        <li>Manage a checking account sensibly.</li>
+                    </ul>
+                    <p><strong>Step 2: Identify learning outcomes</strong></p>
+                    <ul>
+                        <li>concept learning, principle learning, and problem solving</li>
+                    </ul>
+                    <p><strong>Step 3: Analyze information processing steps</strong></p>
+                    <p>Information processing steps:</p>
+                    <ol>
+                        <li>Open a checking account</li>
+                        <li>Order checks and a debit card</li>
+                        <li>Determine appropriate expenses to use a check/debit card</li>
+                        <li>Use checks/debit card to pay for expenses</li>
+                        <li>Use an ATM and debit card to access checking account funds</li>
+                        <li>Balance checking account funds responsibility after any purchases or deposits</li>
+                        <li>Monitor and maintain checking account balance to ensure adequate funds for future financial needs</li>
+                        <li>Deposit and/or transfer funds into checking account when appropriate</li>
+                        <li>Assess check supply and re-order checks when needed</li>
+                    </ol>
+                    <p><strong>Step 4: Draw an information processing map&nbsp;</strong></p>
+                    <div class="item" align="center">
+                        <img src="~/images/Example3FC1.jpg" width="500" height="500" />
+                   
+                    </div> 
+
+                    <p><strong>Step 5: Analyze prerequisite skills</strong></p>
+                    <p><strong>Using the information from steps 1 to 4, analyze prerequisite skills for all information processing steps.&nbsp;</strong></p>
+                    <p>&nbsp;</p>
+
+                    <div id="editor1" data-sample="1"></div>
+                    <div id="content1" style="display: none" data-sample="1">
+                        <h5>Your Solution</h5>
+                        <div id="editorcontent1"></div>
+                    </div>
+                    <p data-sample="1">
+                        <input onclick="createEditor();" type="button" value="Edit" id="create">
+                        <input onclick="removeEditor();" type="button" value="Save" id="remove" style="display:none">
+                    </p>
+                    <div id="trackingDiv"></div>
+                    <a href="javascript:genPDF()"> Download PDF</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Notes About Current Step
+                    </div>
+                    <div id="default" class="panel-body">
+                        <h3>Nothing to display</h3>
+                    </div>
+                    <!-- <div id="replacements" style="display:none"> -->
+                    <div id="E1" style="display:none">
+                        <ol>
+                            <li>Recall and collect necessary supplies and equipment (soap, dish cloth, dish drain rack, bleach, two compartment sink)</li>
+                            <li>Place dish drain rack on the edge of the right sink</li>
+                            <li>Plug left sink, fill with hot water.</li>
+                            <li>Measure (1 tbsp. bleach/1 gallon water) and pour bleach into water</li>
+                            <li>Measure (1 tsp. soap/1 gallon water) and pour into water</li>
+                            <li>Place properly selected dish (correct order: glassware, dinnerware, silverware, pots then pans) in sink and scrub with dish cloth until clean (no residue).</li>
+                            <li>Rinse dish in right sink under hot running water then place dish in drain rack to air dry </li>
+                        </ol>
+                    </div>
+                    <div id="E2" style="display:none">
+                        <h3>New Content From Link 2</h3>
+                    </div>
+                    <!-- </div> -->
+                </div><!-- end panel -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var currentRightPanelElement = "default";
+        function replaceContentInContainer(target, source) {
+            document.getElementById(source).innerHTML = document.getElementById(target).innerHTML;
+            source.style.display = "none";
+            target.style.display = "block";
+            window.currentRightPanelElement = target;
+            alert(window.currentRightPanelElement);
+        }
+    </script>
+    <script>
+        function genPDF() {
+            var doc = new jsPDF('p', 'pt', 'letter');
+            var specialElementHandlers = {
+                '#editor': function (element, renderer) {
+                    return true;
+                }
+            };
+
+            // All units are in the set measurement for the document
+            // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+            doc.fromHTML($('#panelGuest').get(0), 50, 60, {
+                'width': 545,
+                'elementHandlers': specialElementHandlers
+            });
+            doc.save('test.pdf');
+        }
+    </script>
+    <script>
+        $("textarea").tooltip();
+        $(".form-group.collapse").collapse();
+    </script>
+    <script>
+        CKEDITOR.replace('example');
+    </script>
+
+    <script>
+        function sub() {
+            var editorText = CKEDITOR.instances.example.getData();
+            //  alert(editorText);
+            CKEDITOR.instances.example.destroy();
+            // $('#trackingDiv').html(editorText);
+            // CKEDITOR.replace('trackingDiv');
+            // Update button states.
+            document.getElementById('Edit').style.display = '';
+            document.getElementById('Save').style.display = 'none';
+
+        }
+
+        function edit() {
+            CKEDITOR.replace('example');
+            // $('#trackingDiv').html(editorText);
+            // CKEDITOR.replace('trackingDiv');
+            // Update button states.
+            document.getElementById('Edit').style.display = 'none';
+            document.getElementById('Save').style.display = '';
+
+        }
+    </script>
+
+    <script data-sample="1">
+        var editor1, html = '';
+
+        function createEditor() {
+            if (editor1)
+                return;
+
+            // Create a new editor instance inside the <div id="editor"> element,
+            // setting its value to html.
+            var config = {};
+            editor1 = CKEDITOR.appendTo('editor1', config, html);
+
+            // Update button states.
+            document.getElementById('remove').style.display = '';
+            document.getElementById('create').style.display = 'none';
+        }
+
+        function removeEditor() {
+            if (!editor1)
+                return;
+
+            // Retrieve the editor content. In an Ajax application this data would be
+            // sent to the server or used in any other way.
+            html = editor1.getData();
+
+            // Update <div> with "Edited Content".
+            document.getElementById('editorcontent1').innerHTML = html;
+            // Show <div> with "Edited Content".
+            document.getElementById('content1').style.display = '';
+            // Update button states.
+            document.getElementById('remove').style.display = 'none';
+            document.getElementById('create').style.display = '';
+
+            // Destroy the editor.
+            editor1.destroy();
+            editor1 = null;
+        }
+    </script>
+</body>
+</html>

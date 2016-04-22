@@ -1,0 +1,204 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Example 2</div>
+                    <p><strong>Topic: </strong><strong>Business Dining Etiquette</strong></p>
+                    <p><strong>Target learners:</strong></p>
+                    <p>The proposed Business Dining Etiquette Course is for UIUC students and the course will consist of approximately 50 students per course section ranging in age from eighteen to twenty-eight.</p>
+                    <p><strong>Step 1: State learning goals</strong></p>
+                    <p>After completing this course, participants will be able to:</p>
+                    <ol>
+                        <li>Identify elements and characteristics of proper dining etiquette.</li>
+                        <li>Demonstrate proper dining etiquette, and act properly at business and social gatherings.</li>
+                    </ol>
+                    <p><strong>Step 2: Identify learning outcomes</strong></p>
+                    <p>After completing this course,</p>
+                    <ol>
+                        <li>Learners will be able to identify elements and characteristics of proper dining etiquette. (Cognitive)</li>
+                        <li>Learners will be able to demonstrate proper dining etiquette, and act properly at business and social gatherings. (Behavioral)</li>
+                    </ol>
+                    <p><strong>Step 3: Analyze information processing steps</strong></p>
+                    <p>Information processing steps:</p>
+                    <ol>
+                        <li>Identify the proper protocols in responding to and preparing for business dinner invitation</li>
+                        <li>Demonstrate the ability to select and consume selected meals in the correct order</li>
+                        <li>Use utensil in the correct order</li>
+                        <li>Modify techniques appropriately when difficult foods are presented</li>
+                        <li>Discover the conversational cues applicable to communicate within the formal setting</li>
+                        <li>Identify error and illustrates and appropriate way to troubleshoot the issue in a subtle and appropriate way</li>
+                    </ol>
+                    <p><strong>Step 4: Draw an information processing map&nbsp;</strong></p>
+                    <p>&nbsp;</p>
+                    <div class="item" align="center">
+                        <img src="~/images/Example2FC1.jpg" width="500" height="400" />
+                    </div> 
+                    <p><strong>Step 5: Analyze prerequisite skills</strong></p>
+                    <p>Information Processing Step 1. Identify the proper protocols in responding to and preparing for business dinner invitation</p>
+                    <p>Prerequisite 1: Reply the dinner invitation in professional manner</p>
+                    <p>Prerequisite 2: Select appropriate clothing (e.g., business professional or business casual) depending on the gathering situation&nbsp;</p>
+                    <p>Information Processing Step 2. Select and consume selected means in the correct order</p>
+                    <p>Prerequisite 1: Select and order meals necessary</p>
+                    <p>Prerequisite 2: Use utensils in the correct order</p>
+                    <p>Prerequisite 3: Complete soup, salad, main course, and desert based on correct dining etiquette</p>
+                    <p>Information Processing Step 3. Modify techniques when difficult foods are presented</p>
+                    <p>Prerequisite 1: Treat some difficult food in correct manner (e.g., caviar, corn on the cob, and asparagus)</p>
+                    <p>Information Processing Step 4. Discover the conversational cues applicable to communicate within the formal setting</p>
+                    <p>Prerequisite 1: Start and maintain relevant dinner conversation with neighbors</p>
+                    <p>Prerequisite 2: Make and receive a toast</p>
+                    <p>Information Processing Step 5. Identify error and illustrates and appropriate way to troubleshoot the issue in a subtle and appropriate way</p>
+                    <p><strong>Step 6: Draw a prerequisite analysis map</strong></p>
+                    <p><strong>Using the information from steps 1 to 5, complete a flow chart that includes all the information processing steps and prerequisites.</strong></p>
+                    <p><strong>&nbsp;</strong></p>
+                
+                <p>&nbsp;</p>
+
+
+                    <div id="editor1" data-sample="1"></div>
+                    <div id="content1" style="display: none" data-sample="1">
+                        <h5>Your Solution</h5>
+                        <div id="editorcontent1"></div>
+                    </div>
+                    <p data-sample="1">
+                        <input onclick="createEditor();" type="button" value="Edit" id="create">
+                        <input onclick="removeEditor();" type="button" value="Save" id="remove" style="display:none">
+                    </p>
+                    <div id="trackingDiv"></div>
+                    <a href="javascript:genPDF()"> Download PDF</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Notes About Current Step
+                    </div>
+                    <div id="default" class="panel-body">
+                        <h3>Nothing to display</h3>
+                    </div>
+                    <!-- <div id="replacements" style="display:none"> -->
+                    <div id="E1" style="display:none">
+                        <ol>
+                            <li>Recall and collect necessary supplies and equipment (soap, dish cloth, dish drain rack, bleach, two compartment sink)</li>
+                            <li>Place dish drain rack on the edge of the right sink</li>
+                            <li>Plug left sink, fill with hot water.</li>
+                            <li>Measure (1 tbsp. bleach/1 gallon water) and pour bleach into water</li>
+                            <li>Measure (1 tsp. soap/1 gallon water) and pour into water</li>
+                            <li>Place properly selected dish (correct order: glassware, dinnerware, silverware, pots then pans) in sink and scrub with dish cloth until clean (no residue).</li>
+                            <li>Rinse dish in right sink under hot running water then place dish in drain rack to air dry </li>
+                        </ol>
+                    </div>
+                    <div id="E2" style="display:none">
+                        <h3>New Content From Link 2</h3>
+                    </div>
+                    <!-- </div> -->
+                </div><!-- end panel -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var currentRightPanelElement = "default";
+        function replaceContentInContainer(target, source) {
+            document.getElementById(source).innerHTML = document.getElementById(target).innerHTML;
+            source.style.display = "none";
+            target.style.display = "block";
+            window.currentRightPanelElement = target;
+            alert(window.currentRightPanelElement);
+        }
+    </script>
+    <script>
+        function genPDF() {
+            var doc = new jsPDF('p', 'pt', 'letter');
+            var specialElementHandlers = {
+                '#editor': function (element, renderer) {
+                    return true;
+                }
+            };
+
+            // All units are in the set measurement for the document
+            // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+            doc.fromHTML($('#panelGuest').get(0), 50, 60, {
+                'width': 545,
+                'elementHandlers': specialElementHandlers
+            });
+            doc.save('test.pdf');
+        }
+    </script>
+    <script>
+        $("textarea").tooltip();
+        $(".form-group.collapse").collapse();
+    </script>
+    <script>
+        CKEDITOR.replace('example');
+    </script>
+
+    <script>
+        function sub() {
+            var editorText = CKEDITOR.instances.example.getData();
+            //  alert(editorText);
+            CKEDITOR.instances.example.destroy();
+            // $('#trackingDiv').html(editorText);
+            // CKEDITOR.replace('trackingDiv');
+            // Update button states.
+            document.getElementById('Edit').style.display = '';
+            document.getElementById('Save').style.display = 'none';
+
+        }
+
+        function edit() {
+            CKEDITOR.replace('example');
+            // $('#trackingDiv').html(editorText);
+            // CKEDITOR.replace('trackingDiv');
+            // Update button states.
+            document.getElementById('Edit').style.display = 'none';
+            document.getElementById('Save').style.display = '';
+
+        }
+    </script>
+
+    <script data-sample="1">
+        var editor1, html = '';
+
+        function createEditor() {
+            if (editor1)
+                return;
+
+            // Create a new editor instance inside the <div id="editor"> element,
+            // setting its value to html.
+            var config = {};
+            editor1 = CKEDITOR.appendTo('editor1', config, html);
+
+            // Update button states.
+            document.getElementById('remove').style.display = '';
+            document.getElementById('create').style.display = 'none';
+        }
+
+        function removeEditor() {
+            if (!editor1)
+                return;
+
+            // Retrieve the editor content. In an Ajax application this data would be
+            // sent to the server or used in any other way.
+            html = editor1.getData();
+
+            // Update <div> with "Edited Content".
+            document.getElementById('editorcontent1').innerHTML = html;
+            // Show <div> with "Edited Content".
+            document.getElementById('content1').style.display = '';
+            // Update button states.
+            document.getElementById('remove').style.display = 'none';
+            document.getElementById('create').style.display = '';
+
+            // Destroy the editor.
+            editor1.destroy();
+            editor1 = null;
+        }
+    </script>
+</body>
+</html>

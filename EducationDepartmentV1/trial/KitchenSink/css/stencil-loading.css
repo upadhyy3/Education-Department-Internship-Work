@@ -1,0 +1,10 @@
+﻿#paper-holder-loading {
+   left: 200px;    
+   height: 300px;
+   position: relative;
+}
+#stencil-holder-loading {
+   width: 200px;
+   height: 300px;
+   position: absolute;
+}
