@@ -48,12 +48,12 @@ namespace EducationDepartmentV1.Controllers
             return View();
         }
 
-        public ActionResult FlowChart()
-        {
-            ViewBag.Message = "Video";
+        //public ActionResult FlowChart()
+        //{
+        //    ViewBag.Message = "Video";
 
-            return View();
-        }
+        //    return View();
+        //}
 
         //public ActionResult Example1()
         //{
