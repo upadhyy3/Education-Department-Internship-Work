@@ -528,6 +528,7 @@ var Rappid = Backbone.Router.extend({
         $('#btn-to-back').on('mousedown', _.bind(function(evt) { this.selection.invoke('toBack'); }, this));
 
         $('#btn-layout').on('click', _.bind(this.layoutDirectedGraph, this));
+        $('#btn-save').on('click', _.bind(this.saveDirectedGraph, this));
         
         $('#input-gridsize').on('change', _.bind(function(evt) {
             var gridSize = parseInt(evt.target.value, 10);
@@ -590,13 +591,14 @@ var Rappid = Backbone.Router.extend({
         this.paper.toSVG(function(svg) {
             var lightbox = new joint.ui.Lightbox({
 	        title: '(Right-click, and use "Save As" to save the diagram in SVG format)',
-                image: 'data:image/svg+xml,' + encodeURIComponent(svg)
+	        image: 'data:image/svg+xml,' + encodeURIComponent(svg)
             }).open();
-        });
+            console.log(svg)
+        }); 
     },
 
     openAsPNG: function() {
-
+        console.log("it hit the openAsPNG function")
         this.paper.toPNG(function(dataURL) {
             var lightbox = new joint.ui.Lightbox({
 	        title: '(Right-click, and use "Save As" to save the diagram in PNG format)',
@@ -660,6 +662,20 @@ var Rappid = Backbone.Router.extend({
         
         this.commandManager.storeBatchCommand();
     },
+
+
+    //save direccted graph
+        saveDirectedGraph: function() {
+        console.log("it hit the save option");
+        var obj = this.graph.toJSON();
+        console.log(JSON.stringify(obj));
+        $.ajax({
+            type: 'POST',
+            url: '/Home/FlowChart',
+            data: { 'items': JSON.stringify(obj), 'id': 1 }
+        });
+    },
+
 
     initializeChannel: function(url) {
         // Example usage of the Channel plugin. Note that this assumes the `node channelHub` is running.

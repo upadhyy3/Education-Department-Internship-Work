@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\ExamplesController.cs" />
+    <Compile Include="Controllers\flowChartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -209,6 +210,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Example1.cs" />
+    <Compile Include="Models\flowChart.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -844,7 +846,9 @@
     <Content Include="trial\node_modules\graphlib\dist\graphlib.core.js" />
     <Content Include="trial\node_modules\jquery\dist\jquery.js" />
     <Content Include="trial\node_modules\lodash\index.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -918,6 +922,11 @@
     <Content Include="trial\package.json" />
     <Content Include="trial\README.md" />
     <Content Include="Views\Home\fcbckup.cshtml" />
+    <Content Include="Views\flowCharts\Create.cshtml" />
+    <Content Include="Views\flowCharts\Delete.cshtml" />
+    <Content Include="Views\flowCharts\Details.cshtml" />
+    <Content Include="Views\flowCharts\Edit.cshtml" />
+    <Content Include="Views\flowCharts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
