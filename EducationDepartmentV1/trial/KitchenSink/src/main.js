@@ -671,7 +671,7 @@ var Rappid = Backbone.Router.extend({
         console.log(JSON.stringify(obj));
         $.ajax({
             type: 'POST',
-            url: '/Home/FlowChart',
+            url: '/FlowChart/FlowChart',
             data: { 'items': JSON.stringify(obj), 'id': 1 }
         });
     },
