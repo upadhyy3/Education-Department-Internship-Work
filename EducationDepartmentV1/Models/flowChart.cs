@@ -12,10 +12,10 @@ namespace EducationDepartmentV1.Models
         public String jsonDoc { get; set; }
     }
 
-    public class FlowchartDBContext : DbContext
-    {
-        public DbSet<flowChart> flowchart { get; set; }
+    //public class FlowchartDBContext : DbContext
+    //{
+    //    public DbSet<flowChart> flowchart { get; set; }
 
-        public System.Data.Entity.DbSet<EducationDepartmentV1.Models.flowChart> flowCharts { get; set; }
-    }
+    //    public System.Data.Entity.DbSet<EducationDepartmentV1.Models.flowChart> flowCharts { get; set; }
+    //}
 }

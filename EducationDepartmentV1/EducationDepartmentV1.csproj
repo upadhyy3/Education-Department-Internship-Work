@@ -201,7 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\ExamplesController.cs" />
-    <Compile Include="Controllers\flowChartsController.cs" />
+    <Compile Include="Controllers\FlowChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -893,7 +893,7 @@
     <Content Include="Views\Examples\Details.cshtml" />
     <Content Include="Views\Examples\Edit.cshtml" />
     <Content Include="Views\Examples\Index.cshtml" />
-    <Content Include="Views\Home\FlowChart.cshtml" />
+    <Content Include="Views\FlowChart\FlowChart.cshtml" />
     <Content Include="Scripts\lib\base64\bower.json" />
     <Content Include="Scripts\lib\base64\LICENSE" />
     <Content Include="Scripts\lib\base64\package.json" />
@@ -922,11 +922,7 @@
     <Content Include="trial\package.json" />
     <Content Include="trial\README.md" />
     <Content Include="Views\Home\fcbckup.cshtml" />
-    <Content Include="Views\flowCharts\Create.cshtml" />
-    <Content Include="Views\flowCharts\Delete.cshtml" />
-    <Content Include="Views\flowCharts\Details.cshtml" />
-    <Content Include="Views\flowCharts\Edit.cshtml" />
-    <Content Include="Views\flowCharts\Index.cshtml" />
+    <Content Include="Views\FlowChart\flowChartView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

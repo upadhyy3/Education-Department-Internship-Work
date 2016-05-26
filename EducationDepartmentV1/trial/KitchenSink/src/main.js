@@ -669,10 +669,25 @@ var Rappid = Backbone.Router.extend({
         console.log("it hit the save option");
         var obj = this.graph.toJSON();
         console.log(JSON.stringify(obj));
+        var flowChart = {};
+        flowChart.id = 1;
+        flowChart.jsonDoc = JSON.stringify(obj);
         $.ajax({
             type: 'POST',
             url: '/FlowChart/FlowChart',
-            data: { 'items': JSON.stringify(obj), 'id': 1 }
+            
+            //data: { 'items': JSON.stringify(obj), 'id': 1 },
+            //processData: false,
+            //data: JSON.stringify(arr),
+            data: JSON.stringify(flowChart),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            error: function (response) {
+                alert(response.responseText);
+            },
+            success: function (response) {
+                alert(response);
+            }
         });
     },
 
