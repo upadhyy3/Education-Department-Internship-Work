@@ -10,7 +10,7 @@ This Source Code Form is subject to the terms of the Rappid Trial License
 file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
  or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
 
-
+var globalVariable;
 var Rappid = Backbone.Router.extend({
 
     routes: {
@@ -529,7 +529,7 @@ var Rappid = Backbone.Router.extend({
 
         $('#btn-layout').on('click', _.bind(this.layoutDirectedGraph, this));
         $('#btn-save').on('click', _.bind(this.saveDirectedGraph, this));
-        
+        $('#btn-load').on('click', _.bind(this.loadDirectedGraph, this));
         $('#input-gridsize').on('change', _.bind(function(evt) {
             var gridSize = parseInt(evt.target.value, 10);
             $('#output-gridsize').text(gridSize);
@@ -663,12 +663,67 @@ var Rappid = Backbone.Router.extend({
         this.commandManager.storeBatchCommand();
     },
 
+    //load saved directed graph
+    loadDirectedGraph: function () {
+        ////var jsondata;
+        //var jsondata = globalVariable;
+        //////var jsondata = localStorage.getItem(globalVariable);
+        //console.log(jsondata);
+        //console.log(JSON.parse(jsondata))
+        //this.graph.fromJSON(JSON.parse(globalVariable));
+        console.log("it hit the load option");
+        //$.getJSON("/FlowChart/FlowChartFromJSON/1", function (result, status){
+        //    //if (status === 200) {
+        //    //    alert('success');
+        //    //}
+        //    alert(status);
+        //    //jsonData = result.responseData.resultText;
+        //    jsonData = result;
+        //    //alert(jsondata);
+        //    //jsonData = response;
+        //    //alert(response[0].cells);
+        //    //console.log(response[0].cells);
+            
+        //});
+        //alert('success');
+        //alert(JSON.stringify(JSON.parse(jsondata)));
+        //this.graph.fromJSON(JSON.parse(jsondata));
+        //console.log(jsondata);
+        //this.graph.fromJSON(jsondata);
+        var jsondata;
+        $.ajax({
+            type: 'POST',
+            url: '/FlowChart/FlowChartFromJSON/1',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",   
+            error: function (ts) {
+                alert('error');
+            },
+            success: suceesFunction
+        });
+
+        function suceesFunction(data,status) {
+            alert(data);
+            //jsondata = JSON.stringify(data);
+            //console.log(jsondata);
+            //console.log(JSON.parse(jsondata));
+            //var graphCurrent = new joint.dia.Graph;
+            this.graph.fromJSON(JSON.parse(JSON.stringify(data)));
+            alert('graph loaded successfully')
+        }
+        //this.graph.fromJSON(JSON.parse(jsondata));
+        
+    },
 
     //save direccted graph
+    
+
         saveDirectedGraph: function() {
         console.log("it hit the save option");
         var obj = this.graph.toJSON();
         console.log(JSON.stringify(obj));
+        globalVariable = JSON.stringify(obj);
+        localStorage.setItem(globalVariable, JSON.stringify(obj));
         var flowChart = {};
         flowChart.id = 1;
         flowChart.jsonDoc = JSON.stringify(obj);
@@ -686,7 +741,7 @@ var Rappid = Backbone.Router.extend({
                 alert(response.responseText);
             },
             success: function (response) {
-                alert(response);
+                alert("sucess");
             }
         });
     },

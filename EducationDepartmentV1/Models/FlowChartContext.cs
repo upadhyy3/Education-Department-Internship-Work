@@ -8,6 +8,6 @@ namespace EducationDepartmentV1.Models
 {
     public class FlowChartContext :  DbContext
     {
-        public DbSet<Example> Example { get; set; }
+        public DbSet<flowChart> flowCharts { get; set; }
     }
 }
