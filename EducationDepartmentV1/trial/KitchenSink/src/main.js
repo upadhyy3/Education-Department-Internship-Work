@@ -666,7 +666,7 @@ var Rappid = Backbone.Router.extend({
     //load saved directed graph
     loadDirectedGraph: function () {
         ////var jsondata;
-        //var jsondata = globalVariable;
+        var jsondata = globalVariable;
         //////var jsondata = localStorage.getItem(globalVariable);
         //console.log(jsondata);
         //console.log(JSON.parse(jsondata))
@@ -690,11 +690,13 @@ var Rappid = Backbone.Router.extend({
         //this.graph.fromJSON(JSON.parse(jsondata));
         //console.log(jsondata);
         //this.graph.fromJSON(jsondata);
-        var jsondata;
+        //this.initializePaper();
+        //var jsondata;
         $.ajax({
             type: 'POST',
-            url: '/FlowChart/FlowChartFromJSON/1',
+            url: '/FlowChart/FlowChartFromJSON/1016',
             dataType: "json",
+            async: false,
             contentType: "application/json; charset=utf-8",   
             error: function (ts) {
                 alert('error');
@@ -704,14 +706,11 @@ var Rappid = Backbone.Router.extend({
 
         function suceesFunction(data,status) {
             alert(data);
-            //jsondata = JSON.stringify(data);
-            //console.log(jsondata);
-            //console.log(JSON.parse(jsondata));
-            //var graphCurrent = new joint.dia.Graph;
-            this.graph.fromJSON(JSON.parse(JSON.stringify(data)));
+            jsondata = data;
             alert('graph loaded successfully')
         }
-        //this.graph.fromJSON(JSON.parse(jsondata));
+        console.log(jsondata);
+        this.graph.fromJSON(JSON.parse(jsondata));
         
     },
 
